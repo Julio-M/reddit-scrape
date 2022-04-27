@@ -7,17 +7,13 @@ r = praw.Reddit(client_id="<YOUR_CLIENT_ID_HERE>",
                 user_agent="<YOUR_USER_AGENT>",
                 )
 
-
 # search parameters
 q='bitcoin'
 sub='CryptoCurrency'
 sort = "top"
 limit = 50
 
-
 top_posts = r.subreddit(sub).search(q, sort=sort, limit=limit)
-
-print('TYPE', type(top_posts.params))
 
 total_posts = list()
 
@@ -42,12 +38,3 @@ json_string = json.dumps(total_posts)
 jsonFile = open("data.json", "w")
 jsonFile.write(json_string)
 jsonFile.close()
-
-
-
-
-
-
-
-
-
